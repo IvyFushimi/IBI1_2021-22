@@ -1,5 +1,5 @@
 # What does this piece of code do?
-# Answer:
+# Answer: the code print the last random number the randient made.
 
 # Import libraries
 # randint allows drawing a random number,
