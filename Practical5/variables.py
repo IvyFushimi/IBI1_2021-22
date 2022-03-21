@@ -8,7 +8,7 @@ if d > e:
 elif d < e:
 	print("the rate of new cases of 2022 is greater")
 
-X = input('X = :')
-Y = input('Y = :')
+X = input('Boolean X = :')
+Y = input('Boolean Y = :')#input 2 boolean value X and Y.
 W = X and Y
 print(W)
