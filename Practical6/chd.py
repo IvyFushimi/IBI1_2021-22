@@ -1,3 +1,4 @@
+#Firstly we need to create a dictionary that contains all the datas. Because we need a whole output of the dictionary, so a subdictionary is needed under the main key. Then we create a scatter plot based on the dictionary. I was not quite sure that whether I make the code more complex, but it could run well at least.
 #create a dict based on the data
 dict = {'paternal_age:chd':{
     '30':'1.03',
