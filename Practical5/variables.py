@@ -6,7 +6,7 @@ e = a - b#the new cases in 2022
 if d > e:
 	print("the rate of new cases of 2021 is greater")
 elif d < e:
-	print("the rate of new cases of 2022 is greater")
+	print("the rate of new cases of 2022 is greater")#compare them and print the right answer
 
 X = input('Boolean X = :')
 Y = input('Boolean Y = :')#input 2 boolean value X and Y.
