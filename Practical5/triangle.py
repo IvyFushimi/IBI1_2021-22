@@ -1,4 +1,4 @@
-
+#we calculate the triangles by adding each of them.
 #the basic way to calculate the dots of each triangle
 #dots = 0
 #n = int(input())
