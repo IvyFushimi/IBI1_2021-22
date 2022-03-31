@@ -1,3 +1,4 @@
+#As the formula was already given, we just need put the number into it and do a comparasion.
 n = 0
 #the initial number of cut is 0
 p = (n**2 + n + 2)/2
