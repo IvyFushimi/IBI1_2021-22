@@ -58,6 +58,7 @@ print(deaths/cases)#the ratio of death
 # x = china_dates
 # y1 = china_new_cases
 # y2 = china_new_deaths
+##this step is a little unnecessary, but by naming them can know which axis they are separately.
 # plt.plot(x,y1,'bo')
 # plt.plot(x,y2,'ro')
 # plt.xticks(china_dates.iloc[0:len(china_dates):4],rotation=-90)
