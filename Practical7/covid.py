@@ -65,10 +65,10 @@ print(deaths/cases)#the ratio of death
 # #xticks is used to modify the value of the x axis, iloc[0:len(china_dates):4]means take the data from china_dates and take one every 4 number, rotation means rotate the date to vertical(90 angles)
 # plt.show()
 
-y1 = covid_data.loc[covid_data["location"]=="Korea","total_cases"]
+y1 = covid_data.loc[covid_data["location"]=="South Korea","total_cases"]
 y2 = covid_data.loc[covid_data["location"]=="Kenya","total_cases"]
 y3 = covid_data.loc[covid_data["location"]=="Colombia","total_cases"]
-x1 = covid_data.loc[covid_data["location"]=="Korea","date"]
+x1 = covid_data.loc[covid_data["location"]=="South Korea","date"]
 x2 = covid_data.loc[covid_data["location"]=="Kenya","date"]
 x3 = covid_data.loc[covid_data["location"]=="Colombia","date"]
 #give value to the axises, to show the 3 sets of data in one plot
@@ -77,7 +77,5 @@ plt.plot(x2,y2,'b+')
 plt.plot(x3,y3,'ro')
 #use bo, b+ and ro to differ the 3 countries
 plt.xticks(x1,rotation=-90)
-plt.xticks(x2,rotation=-90)
-plt.xticks(x3,rotation=-90)
 #to see the x axis more clearly.
 plt.show()
