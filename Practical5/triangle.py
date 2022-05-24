@@ -12,4 +12,6 @@ while N > 0:
     dots = N*(N+1)/2#the dots each triangle have
     DOTS = DOTS + dots#the sum of dots
     N = N-1#to calculate the next dots number of triangle
+    if N < 10:
+        print(dots)
 print(DOTS)
