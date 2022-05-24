@@ -16,12 +16,15 @@ dict2 = dict['paternal_age:chd']
 #print the dict
 print('paternal_age:chd=',dict['paternal_age:chd'])
 #print the age and get the return of the value of the risk
-age = input('age = ')
-print(dict[age])
+age = input('please input the age (choose one from 30,35,40,45,50,55,60,65,70,75)')
+print('the risk is',dict2[age])
 
 #get the graph of the scatter
 import matplotlib.pyplot as plt#import the library of graphing
 x = 30,35,40,45,50,55,60,65,70,75
 y = dict2.values()
 plt.scatter(x,y,marker='o')
+plt.ylabel('the risk')
+plt.xlabel('the ages')
+plt.title('the relationship between the age and the correct risk of cardiovascular health in the offsprint')
 plt.show()
