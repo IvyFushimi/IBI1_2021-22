@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 marks=[45,36,86,57,53,92,65,45]
 print('the marks are: ', sorted(marks))#print the sorted list
 plt.boxplot(marks, vert=True, whis = 1.5, patch_artist=True, meanline=False, showbox=True, showcaps=True, showfliers=True, notch=False )
+plt.ylabel('marks')
+plt.title('the boxplot of the marks')
 plt.show()#create and display the boxplot
 ave = np.average(marks)#use numpy to calculate the average value
 print(ave)#print the average value of marks
@@ -14,3 +16,4 @@ if ave > 60:
     print('passed')
 else:
     print('failed')#compare the average mark with 60
+
