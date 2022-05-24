@@ -1,6 +1,8 @@
 #In this programme, both numpy and matplot are needed since we need a boxplot and the average value.The list was given so we could use it directly.
 #import numpy
 import  numpy as np
+#import matplot
+import matplotlib.pyplot as plt
 #create a list called 'marks'
 marks=[45,36,86,57,53,92,65,45]
 print('the marks are: ', sorted(marks))#print the sorted list
