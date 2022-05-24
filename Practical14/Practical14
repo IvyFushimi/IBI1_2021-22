@@ -1,2 +1,61 @@
-1
+from xml.dom.minidom import parse
+import xml.dom.minidom
+import matplotlib.pyplot as plt
+from collections import Counter
 
+#read the xml file
+DOMTree = xml.dom.minidom.parse('go_obo(1).xml')
+collection = DOMTree.documentElement
+terms = collection.getElementsByTagName('term')#find all the term elemrnts
+count_terms = terms.length#count the total number of terms
+print(count_terms)
+
+#find the total number of the'is_a' and the distribution
+number1 = []#list the number
+for term in terms:
+    is_a = term.getElementsByTagName("is_a")
+    node= len(is_a)
+    number1.append(node)#create a list that contains all the number
+count1= Counter(number1)#create the dictionary of terms and the number of is_a
+print(number1)
+
+value = list(count1.values())
+key = list(count1.keys())
+plt.bar(key,value)
+plt.ylabel('the number of terms')
+plt.xlabel('the number of childnodes')
+plt.title('The distribution of child nodes across all terms')
+plt.show()
+
+#the translation part
+number2 = []#store all the number of the is_a for the terms that in defstrs have 'translation'
+translation = []#store the translation terms
+n = 0
+for term in terms:
+      defstrs = term.getElementsByTagName("defstr")[0].childNodes[0]
+      lines = defstrs.data
+      if 'translation' in lines:
+          translation.append(term)
+          n = n + 1
+for term in translation:
+    is_a2 =  term.getElementsByTagName("is_a")
+    node2 = len(is_a2)#node2 means the amount of the is_a under 'translation' condition
+    number2.append(node2)
+count2 = Counter(number2)
+value2 = list(count2.values())
+key2 = list(count2.keys())
+plt.bar(key2,value2)
+plt.ylabel('the number of terms')
+plt.xlabel('the number of childnodes for translation')
+plt.title('The distribution of child nodes across all terms for translation')
+plt.show()
+
+#compare the translation average with the total average
+average_translation = int(sum(number2))/n
+all_average = int(sum(number1))/count_terms
+print('average nodes for translation:', average_translation)
+print('all average nodes:', all_average)
+if average_translation > all_average:
+    print('the ‘translation’ terms contain, on average, a greater number of child nodes than the overall Gene Ontology')
+if average_translation < all_average:
+    print('the ‘translation’ terms contain, on average, a smaller number of child nodes than the overall Gene Ontology')
